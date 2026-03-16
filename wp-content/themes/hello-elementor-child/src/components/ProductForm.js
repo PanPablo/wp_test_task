@@ -98,7 +98,18 @@ const ProductForm = ( { productId = null } ) => {
 		const method = productId ? 'PUT' : 'POST';
 
 		apiFetch( { path, method, data: body } )
-			.then( () => navigate( '/' ) )
+			.then( ( saved ) => {
+				navigate( '/', {
+					state: {
+						notice: {
+							status: 'success',
+							message: productId
+								? `"${ saved.title.rendered }" ${ __( 'has been updated.', 'hello-elementor-child' ) }`
+								: `"${ saved.title.rendered }" ${ __( 'has been created.', 'hello-elementor-child' ) }`,
+						},
+					},
+				} );
+			} )
 			.catch( () => {
 				setError( __( 'Failed to save product.', 'hello-elementor-child' ) );
 				setIsSaving( false );

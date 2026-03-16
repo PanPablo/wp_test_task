@@ -2,14 +2,16 @@ import apiFetch from '@wordpress/api-fetch';
 import { Button, Notice, Spinner } from '@wordpress/components';
 import { useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const ProductList = () => {
+	const location = useLocation();
+
 	const [ products, setProducts ] = useState( [] );
 	const [ isLoading, setIsLoading ] = useState( true );
 	const [ error, setError ] = useState( null );
 	const [ deletingId, setDeletingId ] = useState( null );
-	const [ notice, setNotice ] = useState( null );
+	const [ notice, setNotice ] = useState( location.state?.notice ?? null );
 
 	const fetchProducts = () => {
 		setIsLoading( true );
