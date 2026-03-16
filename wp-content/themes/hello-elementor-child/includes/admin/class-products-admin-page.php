@@ -58,5 +58,6 @@ class Products_Admin_Page {
 		);
 
 		wp_enqueue_style( 'wp-components' );
+		wp_enqueue_media();
 	}
 }
