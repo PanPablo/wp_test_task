@@ -10,11 +10,13 @@ add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_styles' );
 require_once get_stylesheet_directory() . '/includes/post-types/class-post-type-products.php';
 require_once get_stylesheet_directory() . '/includes/taxonomies/class-taxonomy-product-category.php';
 require_once get_stylesheet_directory() . '/includes/admin/class-products-admin-page.php';
+require_once get_stylesheet_directory() . '/includes/rest/class-products-rest-fields.php';
 
 add_action( 'init', [ Post_Type_Products::class, 'register' ] );
 add_action( 'init', [ Taxonomy_Product_Category::class, 'register' ] );
 
 Products_Admin_Page::init();
+Products_Rest_Fields::init();
 
 add_action( 'after_setup_theme', 'hello_elementor_child_disable_admin_bar' );
 
