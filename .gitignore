@@ -32,6 +32,10 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Composer
+wp-content/themes/hello-elementor-child/vendor/
+wp-content/themes/hello-elementor-child/wp-tests-config.php
+
 # Node
 node_modules/
 npm-debug.log*
