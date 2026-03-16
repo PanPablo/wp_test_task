@@ -1,12 +1,14 @@
-import { __ } from '@wordpress/i18n';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import ProductList from './ProductList';
 
-const App = () => {
-	return (
-		<div>
-			<h1>{ __( 'Products', 'hello-elementor-child' ) }</h1>
-			<p>{ __( 'App is working.', 'hello-elementor-child' ) }</p>
-		</div>
-	);
-};
+const App = () => (
+	<HashRouter>
+		<Routes>
+			<Route path="/" element={ <ProductList /> } />
+			<Route path="/add" element={ <div>Add screen — coming in step 5</div> } />
+			<Route path="/edit/:id" element={ <div>Edit screen — coming in step 5</div> } />
+		</Routes>
+	</HashRouter>
+);
 
 export default App;
