@@ -1,0 +1,41 @@
+# Claude
+.claude/
+
+# WordPress core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# Uploads
+/wp-content/uploads/
+
+# Plugins (manage via composer or manually track)
+/wp-content/plugins/
+
+# Default themes
+/wp-content/themes/hello-elementor/
+/wp-content/themes/twentytwentyfive/
+/wp-content/themes/twentytwentyfour/
+/wp-content/themes/twentytwentythree/
+
+# Config
+wp-config.php
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
